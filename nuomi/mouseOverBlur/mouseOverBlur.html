@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>有趣的鼠标悬停模糊效果</title>
+	<style type="text/css">
+		figure {
+			position: relative;
+			text-align: center;
+			background: url("huajianghu.jpg"), no-repeat;
+		}
+		figure:hover {
+			filter: blur(5px);
+		}
+		figcaption {
+			position: relative;
+			text-align: center;
+
+		}
+		figcaption h1 {
+			background-color: red;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+	</style>
+</head>
+<body>
+	<figure>
+		<img src="huajianghu.jpg">
+		<figcaption>
+			<h1>人未尽杯莫停</h1>
+			<h2>欢迎收看</h2>
+		</figcaption>
+	</figure>
+</body>
+</html>
