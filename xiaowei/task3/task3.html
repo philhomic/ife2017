@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务三：三栏式布局</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+        body {
+            padding: 20px;
+        }
+        #container {
+            padding: 20px;
+            background-color: #eee;
+            border: 1px solid #999;
+        }
+        #container:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #left, #right {
+            padding: 20px;
+            border: 1px solid #999;
+            float: left;
+            background: white;
+        }
+        #left {
+            width: 160px;
+            margin-left: -100%;
+        }
+        #right {
+            width: 80px;
+            margin-left: -122px;
+        }
+        #main {
+            width: 100%;
+            float: left;
+        }
+        #main #body {
+            margin-left: 222px;
+            margin-right: 142px;
+            border: 1px solid #999;
+            padding: 20px;
+            background: white;
+        }
+        #teamLogo{
+            width: 80px;
+            height: 80px;
+            border: 1px solid #999;
+            background-color: #eee;
+            text-align: center;
+            float: left;
+            font-size: 14px;
+            line-height: 80px;
+        }
+        #left h3 {
+            font-size: 14px;
+            float: left;
+            font-weight:normal;
+            margin-top: 0;
+            margin-left: 20px;
+        }
+        #body p {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        #right ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #right ul li {
+            border: 1px solid #999;
+            background-color: #eee;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            margin-bottom: 20px;
+        }
+        #right ul li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <div id="body">
+                <p>马王堆团队的简要介绍</p>
+                <p>我与我最好的朋友一个姓王，一个姓马，故起名为马王堆团队。</p>
+                <p>平日没什么爱好，就喜欢瞎折腾来消磨时间。而消磨时间最好的方法可能就是学些编程了吧。</p>
+                <p>团队目前编程能力比较底下，纯属自娱自乐型。</p>
+            </div>
+        </div>
+        <div id="left">
+            <div id="teamLogo">团队logo</div>
+            <h3>马王堆</h3>
+        </div>
+        <div id="right">
+            <ul>
+                <li>个人logo</li>
+                <li>个人logo</li>
+                <li>个人logo</li>
+                <li>个人logo</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
