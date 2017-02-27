@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务五：基础JavaScript练习</title>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+        #container {
+            border: 1px solid #999;
+            background-color: #eee;
+            width: 930px;
+            height: 160px;
+            /*margin-top: -80px;*/
+            /*margin-left: -450px;*/
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            padding: 20px
+        }
+        #input {
+            height: 30px;
+            width: 100px;
+        }
+        button {
+            margin-left: 10px;
+        }
+        #rise, #delete {
+            margin-left: 50px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            vertical-align: bottom;
+            height: 100px;
+        }
+        ul li {
+            display: inline-block;
+            color: white;
+            background-color: deeppink;
+            text-align: center;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <input type="text" id="input">
+    <button id="add">添加数据</button>
+    <button id="rise">排序 ⬆️</button>
+    <button id="drop">排序 ⬇️</button>
+    <button id="delete">删除数据</button>
+    <ul id="queue">
+
+    </ul>
+</div>
+
+<script>
+    var q = [10, 30, 75, 12, 11, 30];
+    var $ = function(id){
+        return document.getElementById(id);
+    }
+    var input = $('input');
+    var add = $('add');
+    var rise = $('rise');
+    var drop = $('drop');
+    var del = $('delete');
+    var queue = $('queue');
+
+    function render(q){
+        var li;
+        queue.innerHTML = '';
+        q.forEach(function(item, idx){
+            li = document.createElement('li');
+            li.style.height = item + 'px';
+            li.style.width = '10px';
+            li.style.marginTop = (100 - item) + 'px';
+            queue.appendChild(li);
+        })
+    }
+
+    add.addEventListener('click', function(){
+        var val = input.value;
+        if(q.length > 60){
+            alert('数据超过60条，无法再添加');
+        } else {
+            if(val && val >= 10 && val <= 100){
+                q.push(input.value);
+                render(q);
+                input.value = '';
+            } else {
+                alert('请输入10至100之间的数值！');
+                input.value = '';
+            }
+        }
+    });
+
+    rise.addEventListener('click', function(){
+        if(q.length){
+            q.sort(function(a, b){
+                return a - b;
+            });
+            render(q);
+        }
+    })
+
+    drop.addEventListener('click', function(){
+        if(q.length){
+            q.sort(function(a, b){
+                return b - a;
+            });
+            render(q);
+        }
+    })
+
+    del.addEventListener('click', function(){
+        if(q.length){
+            q.pop();
+            render(q);
+        }
+    })
+
+    render(q);
+
+
+</script>
+</body>
+</html>
