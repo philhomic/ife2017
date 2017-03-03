@@ -1,12 +1,34 @@
-/**
- * Created by WangPei on 2017/3/1.
- */
-//Vue task 1
+//订阅
+function EventTarget(){
 
+}
+
+EventTarget.prototype = {
+    constructor: EventTarget,
+    addListener: function(name, fn){
+        if(!this.hasOwnProperty("_listeners")){
+            this._listeners = [];
+        }
+        if(typeof this._listeners[name] == 'undefined'){
+            this._listeners[name] = [];
+        }
+        this._listeners[name].push(fn);
+    },
+    fire: function(name, value){
+        if(this._listeners && this._listeners[name] instanceof Array){
+            var fns = this._listeners[name];
+            for(var i = 0, len = fns.length; i < len; i++){
+                fns[i](value);
+            }
+        }
+    }
+}
+
+//观察者
 function Observer(data) {
     this.data = data;
     this.walk(data);
-    this.watchProperties = {};
+    this.event = new EventTarget();
 }
 
 let p = Observer.prototype;
@@ -39,17 +61,17 @@ p.convert = function (key, val) {
             val = newVal;
             if(typeof newVal == 'object'){
                 new Observer(newVal)
-            }
-            if(self.watchProperties[key] && typeof self.watchProperties[key] === 'function'){
-                self.watchProperties[key](val);
-            }
+            };
+            self.event.fire(key, val);
+
         }
     })
 };
 
 p.$watch = function(name, fn){
-    this.watchProperties[name] = fn;
+    this.event.addListener(name, fn);
 }
+
 
 //以下是测试
 
