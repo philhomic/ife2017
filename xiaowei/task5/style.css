@@ -1,0 +1,168 @@
+body {
+	background: black;
+	padding: 0;
+	margin: 0;
+}
+.container {
+	margin: 0 40px;
+	padding: 20px;
+	background-color: #eee;
+	position: relative;
+}
+.header {
+	background-color: #333;
+	margin: -20px -20px 0 -20px;
+	padding: 10px;
+}
+#logo {
+	width: 120px;
+	margin-left: 20px;
+}
+#logo img {
+	width: 100%;
+}
+.nav {
+	position: absolute;
+	top: 20px;
+	right: 0px;
+}
+.nav ul {
+	margin: 0;
+}
+.nav ul li {
+	float: left;
+	margin-right: 30px;
+}
+.nav ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 12px;
+}
+article, div.sidebar {
+	margin: 20px 10px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 2px 2px 2px 1px #999;
+}
+article h2 {
+	font-size: 20px;
+}
+article h3 {
+	color: gray;
+	font-size: 16px;
+}
+article p.info {
+	text-indent: 0;
+	color: gray;
+	font-size: 12px;
+}
+article p {
+	text-indent: 32px;
+	font-size: 15px;
+	line-height: 30px;
+}
+article ul {
+	list-style: none;
+	font-size: 15px;
+	line-height: 30px;
+}
+figure {
+	border: 1px solid #999;
+	width: 160px;
+	padding: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+figure figcaption {
+	text-align: center;
+	font-size: 14px;
+	line-height: 28px;
+}
+figure img {
+	width: 160px;
+}
+p.tableInfo {
+	margin: 0;
+	line-height: 20px;
+	text-indent: 0;
+}
+article table {
+	width: 100%;
+	font-size: 12px;
+	border-collapse: collapse;
+}
+article table thead {
+	background-color: #333;
+	color: white;
+}
+article table td {
+	border: 1px solid #eee;
+	padding: 5px;
+}
+article table tfoot {
+	background-color: #ccc;
+}
+article table tfoot td {
+	border-width: 0px;
+	font-weight: bold;
+	font-size: 14px;
+}
+article img {
+    max-width: 100%;
+}
+.container .sidebar {
+	position: absolute;
+    right: 20px;
+    top: 40px;
+	margin-top: 46px;
+	font-size: 14px;
+}
+.container .sidebar h2 {
+	font-size: 16px;
+	padding: 10px;
+	border-left: 3px solid #ccc;
+}
+.container .sidebar form label {
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+	vertical-align: top;
+}
+.container .sidebar form .inlineInput {
+	display: inline-block;
+	width: 58%;
+}
+.container .sidebar form .inlineInput p {
+	font-size: 12px;
+	color: gray;
+	margin: 5px 0;
+}
+.container .sidebar form .registerItem {
+	padding: 10px 0;
+}
+.container .sidebar form textarea {
+	width: 57%;
+	height: 100px;
+	font-size: 16px;
+}
+.container .sidebar form button {
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+	background-color: #35d;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	-webkit-appearance: none;
+	box-shadow: none;
+	border: none;
+}
+.container .main {
+    margin-right: 360px;
+}
+.footer {
+	text-align: center;
+	color: white;
+	padding: 20px;
+	font-size: 14px;
+}
