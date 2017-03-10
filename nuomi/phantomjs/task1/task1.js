@@ -1,6 +1,6 @@
 var page = require("webpage").create(); 
 var system = require("system"); 
-// console.log(0); 
+
 if(system.args.length === 1){
     console.log("Usage: phantomjs task4.js <some keyword>"); 
     phantom.exit(); 
