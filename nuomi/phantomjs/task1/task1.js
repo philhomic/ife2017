@@ -11,7 +11,7 @@ var result = {
 var t = Date.now();
 
 if(system.args.length == 1){
-	console.log('Usage: phantomjs test.js <some keyword>');
+	console.log('Usage: phantomjs task1.js <some keyword>');
 	phantom.exit();
 }
 
@@ -53,7 +53,7 @@ page.open(url, function(status){
 				t = Date.now() - t;
 				result.time = t;
 
-				console.log(JSON.stringify(result));
+				console.log(JSON.stringify(result, null, 4));
 				phantom.exit();
 				
 		})

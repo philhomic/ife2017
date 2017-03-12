@@ -35,7 +35,7 @@ var devices = {
 }
 
 if(system.args.length <= 2){
-	console.log('Usage: phantomjs test.js <one keyword> <useragent: iphone5 | iphone6 | ipad>');
+	console.log('Usage: phantomjs task2.js <one keyword> <useragent: iphone5 | iphone6 | ipad>');
 	phantom.exit();
 }
 
@@ -89,7 +89,7 @@ page.open(url, function(status){
 			t = Date.now() - t;
 			result.time = t;
 
-			console.log(JSON.stringify(result));
+			console.log(JSON.stringify(result, null, 4));
 			phantom.exit();
 							
 		})
